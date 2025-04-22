@@ -153,4 +153,52 @@ document.addEventListener('DOMContentLoaded', () => {
     if (founderCard) {
         founderCard.classList.add('active');
     }
-}); 
+});
+
+const GEMINI_API_KEY = "AIzaSyAWO0KSW28W9_h-cNIATd-Sjdtrcb1EATw";
+
+const askButton = document.getElementById('askButton');
+const userInput = document.getElementById('userInput');
+const aiResponse = document.getElementById('aiResponse');
+
+askButton.addEventListener('click', async () => {
+    const question = userInput.value.trim();
+    if (!question) {
+        aiResponse.innerHTML = '<p>Please enter a question.</p>';
+        return;
+    }
+
+    // Clear previous response and show loading indicator
+    aiResponse.innerHTML = '<p>Thinking...</p>';
+
+    try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateText?key=${GEMINI_API_KEY}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                prompt: {
+                    text: question
+                },
+                temperature: 0.7,
+                maxOutputTokens: 150
+            })
+        });
+
+        if (!response.ok) {
+            const errText = await response.text();
+            throw new Error(`API error: ${errText}`);
+        }
+
+        const data = await response.json();
+        const answer = data.candidates?.[0]?.output || "Sorry, no response was generated.";
+        // Format response to preserve line breaks
+        aiResponse.innerHTML = `<p>${answer.replace(/\n/g, '<br>')}</p>`;
+
+    } catch (error) {
+        console.error('API call error:', error);
+        aiResponse.innerHTML = `<p>Error: ${error.message}</p>`;
+    }
+});
+

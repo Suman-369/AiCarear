@@ -37,6 +37,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
+                    
                     Get Started
                 </button>
             </div>
@@ -46,25 +47,16 @@
         </div>
     </section>
 
-    <!-- Careers Section -->
-    <section id="careers" class="careers">
-        <h2>Popular AI Careers</h2>
-        <div class="career-cards">
-            <div class="card">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning Engineer</h3>
-                <p>Design and implement machine learning systems and algorithms</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-robot"></i>
-                <h3>AI Research Scientist</h3>
-                <p>Conduct research to advance AI technology and applications</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>AI Software Developer</h3>
-                <p>Develop AI-powered applications and solutions</p>
-            </div>
+    <!-- AI Robot Section -->
+    <h2 class="essential-ai-skills" style="color: #3498db; font-size: 2rem; text-align: center;">Essential AI Skills</h2>
+    <section id="careers" class="ai-robot" role="region" aria-labelledby="aiRobotHeading" aria-live="polite">
+        
+        <h2 id="aiRobotHeading">Ask Our AI Career Robot</h2>
+        <p>Get personalized career guidance in AI by chatting with our AI robot.</p>
+        <div class="ai-chat-container">
+            <textarea id="userInput" placeholder="Type your career question here..." rows="4" aria-label="Type your career question here"></textarea>
+            <button id="askButton" aria-describedby="aiResponse">Ask AI Robot</button>
+            <div id="aiResponse" class="ai-response" role="alert" aria-live="assertive" aria-atomic="true"></div>
         </div>
     </section>
 
@@ -130,8 +122,8 @@
                     <img src="images/founder.jpg" alt="Founder">
                 </div>
                 <h3>SK SAMIM</h3>
-                <p class="founder-role">Founder & AI Expert</p>
-                <p class="founder-bio">Passionate about AI and technology, combining innovation with real-world applications to guide the next generation of AI professionals.</p>
+                <p class="founder-role" style="color: #050708; font-weight: bold;">Founder & AI Expert</p>
+                <p class="founder-bio" style="color: #0b0b0b; font-size: 1.1rem; display: none;">Passionate about AI and technology, combining innovation with real-world applications to guide the next generation of AI professionals.</p>
                 <div class="founder-social">
                     <a href="#" class="animated-social-btn">
                         <span></span>
@@ -150,11 +142,8 @@
                 </div>
                 <div class="button-container">
                     <button class="animated-button contact-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Contact Me
+                    
+                        <a href="https://wa.me/+919679421739?text=Hi%20Samim,%20I%20would%20like%20to%20discuss%20a%20project%20with%20you%20can%20we%20connect%20together%20.%20" target="_blank" style="text-decoration: none;">Contact Me</a>
                     </button>
                 </div>
             </div>
@@ -163,15 +152,27 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+        <div class="main-text scroll-bottom">
+            <h2 style="color: #3498db; font-weight: bold;">Contact Me -></h2>
         </div>
+    
+        <form action="https://api.web3forms.com/submit" method="POST" class="scroll-bottom">
+            <input type="hidden" name="access_key" value="87738795-467c-4e48-9ab2-aaf78f4df09f">
+
+                <input type="text" name="first_name" placeholder="Your Name" required>
+                <input type="text" name="email-info" placeholder="Your Email" required>
+                <input type="number" name="Mobile-info" placeholder="Phone Number" autocomplete="off" required>
+                <input type="text"  name="Address-info" placeholder="Your Address" autocomplete="off" required>
+                <textarea name="Massege-info" id="" cols="30" rows="10" placeholder="your Message" autocomplete="off" required></textarea>
+                
+               
+              
+              
+            <div class="btn-box formBtn">
+                <button type="submit" value="Submit" class="btn">Send Message</button>
+            </div>
+
+        </form>
     </section>
 
     <!-- Footer -->
@@ -203,6 +204,7 @@
             <p>&copy; 2025 AI Career Guide. All rights reserved.</p>
         </div>
     </footer>
+
 
     <script src="script.js"></script>
 </body>

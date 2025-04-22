@@ -890,11 +890,137 @@ body {
 }
 
 /* Contact Button Specific Styles */
-.contact-btn {
-    margin-top: 20px;
-    background: #2c3e50;
+.contact{
+    background: #f0f0f0;
+    width: 100%;
+    padding: 2rem 0;
 }
 
-.contact-btn:hover {
+.contact form{
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact form input,
+.contact form textarea{
+    width: 100%;
+    color: #333;
+    background: #fff;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact form textarea{
+    resize: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    height: 10rem;
+}
+
+.formBtn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.formBtn .btn{
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
     background: #3498db;
-} 
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    transition: background 0.3s ease;
+}
+
+.formBtn .btn:hover{
+    background: #2980b9;
+}
+
+
+#careers.ai-robot {
+    background: linear-gradient(135deg, #1a1a40, #2a2a72);
+    color: #fff;
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 3rem auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#aiRobotHeading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+    text-align: center;
+}
+
+#careers p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.ai-chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+textarea#userInput {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    resize: vertical;
+    font-size: 1rem;
+    background-color: #ffffffcc;
+    color: #000;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+textarea#userInput:focus {
+    box-shadow: 0 0 0 3px #ffd70099;
+}
+
+button#askButton {
+    background-color: #ffd700;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+button#askButton:hover {
+    background-color: #ffcc00;
+}
+
+#aiResponse.ai-response {
+    background-color: #ffffffcc;
+    color: #000;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    min-height: 60px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    white-space: pre-wrap;
+}
