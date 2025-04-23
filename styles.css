@@ -549,7 +549,7 @@ body {
 
 .founder-bio {
     padding: 0 1.5rem 1.5rem;
-    color: #666;
+    color: #6a4646;
     line-height: 1.6;
     opacity: 0;
     transform: translateY(20px);
@@ -677,6 +677,7 @@ body {
 
 .founder-card:hover .founder-role::after {
     width: 100%;
+    
 }
 
 /* Advanced Animations */
