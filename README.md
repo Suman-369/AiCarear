@@ -193,8 +193,8 @@ This project is open source and available under the MIT License.
 ## 📞 Contact
 
 For questions or support:
-- Email: info@gnhresearch.org
-- Phone: +1 (555) 123-4567
+- Email: www.skar2022@gmail.com
+- Phone: 7318985335
 - Address: 123 Research Avenue, Innovation District
 
 ---
