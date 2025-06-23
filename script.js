@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initParallaxEffects();
     initLoadingAnimations();
+    setupWipRedirects();
 });
 
 // Navigation functionality
@@ -193,28 +194,7 @@ function initContactForm() {
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const subject = this.querySelector('input[placeholder="Subject"]').value;
-            const message = this.querySelector('textarea').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                showNotification('Please fill in all required fields.', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Simulate form submission
-            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-            this.reset();
+            window.location.href = 'wip.html';
         });
     }
 }
@@ -535,4 +515,15 @@ function initButtonLoading() {
 }
 
 // Initialize button loading states
-initButtonLoading(); 
+initButtonLoading();
+
+// WIP Page Redirects
+function setupWipRedirects() {
+    const redirectElements = document.querySelectorAll('.hero-buttons .btn, a.read-more');
+    redirectElements.forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'wip.html';
+        });
+    });
+} 
