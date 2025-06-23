@@ -820,9 +820,23 @@ body.dark-mode .about-section::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 50px;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.18);
+    border: 3px solid var(--bg-primary);
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+.faculty-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.faculty-card:hover .faculty-image-placeholder {
+    box-shadow: 0 8px 24px rgba(37,99,235,0.18);
+    border: 3px solid var(--primary-color);
 }
 
 .faculty-info .faculty-name {
@@ -914,61 +928,70 @@ body.dark-mode .about-section::before {
 }
 
 .contact-form {
-    background: var(--bg-secondary);
-    padding: 2.5rem;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border-radius: 20px;
+    border: 1.5px solid var(--border-color);
+    padding: 3rem 2rem;
+    transition: background 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 2;
 }
-
+body.dark-mode .contact-form {
+    background: rgba(15,23,42,0.85);
+    box-shadow: 0 8px 32px 0 rgba(16, 24, 39, 0.35);
+    border: 1.5px solid var(--border-color);
+}
 .contact-form h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
 }
-
 .contact-form p {
-    font-size: 1rem;
+    font-size: 1.08rem;
     margin-bottom: 2rem;
     color: var(--text-secondary);
 }
-
 .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
-
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-primary);
+    padding: 1.1rem 1.2rem;
+    border-radius: 14px;
+    border: 1.5px solid var(--border-color);
+    background: rgba(255,255,255,0.85);
     color: var(--text-primary);
-    transition: var(--transition);
+    font-size: 1.05rem;
+    transition: border 0.3s, background 0.3s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
-
-.form-group select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1em;
-    padding-right: 2.5rem;
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+    background: rgba(30,41,59,0.95);
+    color: var(--text-primary);
 }
-
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    background: rgba(79,172,254,0.08);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13);
 }
-
-.btn i {
-    margin-right: 8px;
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
 }
 
 /* Footer */
@@ -1056,62 +1079,63 @@ body.dark-mode .about-section::before {
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 0;
         right: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
+        width: 100vw;
+        height: 100vh;
         flex-direction: column;
         background: var(--bg-primary);
-        padding: 2rem;
-        gap: 1.5rem;
+        padding: 5rem 2rem 2rem 2rem;
+        gap: 2rem;
         transition: right 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        z-index: 1000;
+        z-index: 2000;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        align-items: flex-start;
     }
-
     .nav-menu.active {
         right: 0;
     }
-
     .nav-toggle {
         display: flex;
-        z-index: 1001;
+        z-index: 2100;
     }
-
+    .navbar {
+        position: fixed;
+        width: 100vw;
+        left: 0;
+        z-index: 2200;
+    }
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 4rem 2rem;
     }
-
     .hero-title {
         font-size: 2.8rem;
     }
-
     .hero-buttons {
         justify-content: center;
     }
-
     .about-grid-layout {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .about-pillars .research-pillars {
         grid-template-columns: 1fr;
     }
-
+    
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
+    
     .news-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .research-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .faculty-grid {
         grid-template-columns: 1fr;
     }
@@ -1121,7 +1145,6 @@ body.dark-mode .about-section::before {
         text-align: center;
         gap: 2rem;
     }
-
     .social-links {
         justify-content: center;
     }
@@ -1141,66 +1164,66 @@ body.dark-mode .about-section::before {
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
     }
-
+    
     .about-section {
         padding: 60px 0;
     }
-
+    
     .about-grid-layout {
         gap: 40px;
     }
-
+    
     .about-text-block h3 {
         font-size: 1.6rem;
     }
-
+    
     .about-text-block p {
         font-size: 1.1rem;
     }
-
+    
     .about-stats h3,
     .about-pillars h3 {
         font-size: 1.6rem;
         margin-bottom: 2rem;
     }
-
+    
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
+    
     .stat-item {
         padding: 20px;
     }
-
+    
     .stat-icon {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
     }
-
+    
     .stat-number {
         font-size: 2rem;
     }
-
+    
     .research-pillars {
         gap: 20px;
     }
-
+    
     .pillar {
         padding: 20px;
     }
-
+    
     .pillar-icon {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
     }
-
+    
     .image-placeholder {
         padding-top: 60%;
     }
-
+    
     .research-cube {
         width: 150px;
         height: 150px;
@@ -1215,8 +1238,168 @@ body.dark-mode .about-section::before {
     .left { transform: translateX(-75px) rotateY(-90deg); }
     .top { transform: translateY(-75px) rotateX(90deg); }
     .bottom { transform: translateY(100px) rotateX(-90deg); }
+    .contact-form {
+        padding: 1.5rem 0.7rem;
+    }
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Our Research Areas Section */
+.research-areas-section {
+    position: relative;
+    padding: 100px 0;
+    background: var(--bg-secondary);
+    transition: background 0.3s;
+    overflow: hidden;
+}
+body.dark-mode .research-areas-section {
+    background: var(--bg-dark);
+}
+.section-underline {
+    width: 80px;
+    height: 4px;
+    margin: 0.5rem auto 1.5rem;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+.research-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    z-index: 2;
+    position: relative;
+}
+.research-area-card {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+body.dark-mode .research-area-card {
+    background: var(--bg-secondary);
+}
+.research-area-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+.area-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+    transition: color 0.3s;
+}
+.research-area-card:hover .area-icon {
+    color: var(--primary-color);
+}
+.research-area-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: var(--text-primary);
+}
+.research-area-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.research-bg-shape {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    opacity: 0.08;
+    transform: translateX(-50%);
+    z-index: 1;
+    pointer-events: none;
+    transition: background 0.3s;
+}
+body.dark-mode .research-bg-shape {
+    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+    opacity: 0.12;
+}
+@media (max-width: 768px) {
+    .research-areas-section {
+        padding: 60px 0;
+    }
+    .research-areas-grid {
+        gap: 20px;
+    }
+}
+
+/* Know Our Members Section Styles */
+.members-section {
+    padding: 30px 0 20px 0;
+    background: #f9f9fb;
+}
+.members-section .section-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.2em;
+    letter-spacing: 1px;
+}
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    justify-items: center;
+}
+.member-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 16px 14px;
+    width: 100%;
+    max-width: 270px;
+    min-height: 120px;
+    display: flex;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+}
+.member-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+.member-info {
+    width: 100%;
+}
+.member-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+    color: #2a2a2a;
+}
+.member-title {
+    font-size: 0.93rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+@media (max-width: 600px) {
+    .members-section {
+        padding: 18px 0 10px 0;
+    }
+    .members-grid {
+        gap: 10px;
+    }
+    .member-card {
+        padding: 10px 7px;
+        min-height: 90px;
+    }
+    .member-name {
+        font-size: 0.98rem;
+    }
+    .member-title {
+        font-size: 0.85rem;
+    }
 } 
