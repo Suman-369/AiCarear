@@ -280,6 +280,7 @@ body:not(.dark-mode) .fa-moon { opacity: 0; transform: scale(0.5); }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    overflow-x: hidden;
 }
 
 .hero-text {
@@ -385,6 +386,8 @@ body:not(.dark-mode) .fa-moon { opacity: 0; transform: scale(0.5); }
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1000px;
+    overflow: visible;
 }
 
 .research-cube {
@@ -1108,13 +1111,34 @@ body.dark-mode .form-group select {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 4rem 2rem;
+        padding: 2.5rem 1rem 2rem 1rem;
+        gap: 2rem;
     }
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.1rem;
+        line-height: 1.15;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        max-width: 95vw;
     }
     .hero-buttons {
-        justify-content: center;
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: center;
+    }
+    .hero-visual {
+        perspective: 600px;
+        min-height: 160px;
+    }
+    .research-cube {
+        width: 120px;
+        height: 120px;
+    }
+    .cube-face {
+        width: 120px;
+        height: 120px;
     }
     .about-grid-layout {
         grid-template-columns: 1fr;
@@ -1148,23 +1172,57 @@ body.dark-mode .form-group select {
     .social-links {
         justify-content: center;
     }
+    .hero-background, .floating-shapes {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    .hero-visual {
+        margin: 0 auto;
+        max-width: 100vw;
+    }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
     }
+    .hero-content {
+        padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+        gap: 1.2rem;
+    }
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 1.3rem;
+        line-height: 1.1;
+        margin-bottom: 0.7rem;
+    }
+    .hero-subtitle {
+        font-size: 0.93rem;
+        margin-bottom: 0.7rem;
+    }
+    .hero-buttons {
+        gap: 0.5rem;
+    }
+    .btn {
+        width: 100%;
+        min-width: 0;
+        font-size: 0.95rem;
+        padding: 0.7rem 0.5rem;
+    }
+    .hero-visual {
+        perspective: 400px;
+        min-height: 100px;
+    }
+    .research-cube {
+        width: 70px;
+        height: 70px;
+    }
+    .cube-face {
+        width: 70px;
+        height: 70px;
     }
     .section-title {
         font-size: 2rem;
     }
-    .btn {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    
     .about-section {
         padding: 60px 0;
     }
@@ -1224,22 +1282,20 @@ body.dark-mode .form-group select {
         padding-top: 60%;
     }
     
-    .research-cube {
-        width: 150px;
-        height: 150px;
-    }
-    .cube-face {
-        width: 150px;
-        height: 150px;
-    }
-    .front { transform: translateZ(75px); }
-    .back { transform: translateZ(-75px) rotateY(180deg); }
-    .right { transform: translateX(75px) rotateY(90deg); }
-    .left { transform: translateX(-75px) rotateY(-90deg); }
-    .top { transform: translateY(-75px) rotateX(90deg); }
-    .bottom { transform: translateY(100px) rotateX(-90deg); }
     .contact-form {
         padding: 1.5rem 0.7rem;
+    }
+    .hero-title {
+        font-size: 1.1rem;
+        word-break: break-word;
+    }
+    .hero-subtitle {
+        font-size: 0.85rem;
+        word-break: break-word;
+    }
+    .hero-visual {
+        margin: 0 auto;
+        max-width: 100vw;
     }
 }
 
@@ -1340,7 +1396,8 @@ body.dark-mode .research-bg-shape {
 /* Know Our Members Section Styles */
 .members-section {
     padding: 30px 0 20px 0;
-    background: #f9f9fb;
+    background: var(--bg-secondary);
+    transition: background 0.3s;
 }
 .members-section .section-title {
     font-size: 1.7rem;
@@ -1356,7 +1413,7 @@ body.dark-mode .research-bg-shape {
     justify-items: center;
 }
 .member-card {
-    background: #fff;
+    background: var(--bg-primary);
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     padding: 16px 14px;
@@ -1367,10 +1424,12 @@ body.dark-mode .research-bg-shape {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, background 0.3s;
+    border: 1px solid var(--border-color);
 }
 .member-card:hover {
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    background: var(--bg-secondary);
 }
 .member-info {
     width: 100%;
@@ -1379,11 +1438,11 @@ body.dark-mode .research-bg-shape {
     font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 0.3em;
-    color: #2a2a2a;
+    color: var(--text-primary);
 }
 .member-title {
     font-size: 0.93rem;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 0;
 }
@@ -1393,7 +1452,7 @@ body.dark-mode .research-bg-shape {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 10px auto;
-    background: #eaeaea;
+    background: var(--bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1406,23 +1465,26 @@ body.dark-mode .research-bg-shape {
     border-radius: 50%;
     display: block;
 }
-@media (max-width: 600px) {
-    .members-section {
-        padding: 18px 0 10px 0;
-    }
-    .members-grid {
-        gap: 10px;
-    }
-    .member-card {
-        padding: 10px 7px;
-        min-height: 90px;
-    }
-    .member-name {
-        font-size: 0.98rem;
-    }
-    .member-title {
-        font-size: 0.85rem;
-    }
+
+/* Dark mode overrides for members section */
+body.dark-mode .members-section {
+    background: var(--bg-dark);
+}
+body.dark-mode .member-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+body.dark-mode .member-card:hover {
+    background: var(--bg-primary);
+}
+body.dark-mode .member-name {
+    color: var(--text-primary);
+}
+body.dark-mode .member-title {
+    color: var(--text-secondary);
+}
+body.dark-mode .member-image-placeholder {
+    background: var(--bg-primary);
 }
 
 /* Remove modal/overlay styles for members-section */
