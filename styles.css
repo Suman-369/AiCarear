@@ -1364,7 +1364,9 @@ body.dark-mode .research-bg-shape {
     max-width: 270px;
     min-height: 120px;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     transition: box-shadow 0.2s;
 }
 .member-card:hover {
@@ -1385,6 +1387,25 @@ body.dark-mode .research-bg-shape {
     line-height: 1.4;
     margin-bottom: 0;
 }
+.member-image-placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.member-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
 @media (max-width: 600px) {
     .members-section {
         padding: 18px 0 10px 0;
@@ -1401,5 +1422,110 @@ body.dark-mode .research-bg-shape {
     }
     .member-title {
         font-size: 0.85rem;
+    }
+}
+
+/* Remove modal/overlay styles for members-section */
+#members.members-section {
+    position: static;
+    top: unset;
+    left: unset;
+    width: 100%;
+    height: auto;
+    background: none;
+    z-index: unset;
+    display: block !important;
+    align-items: unset;
+    justify-content: unset;
+    overflow-y: unset;
+    transition: none;
+    opacity: 1;
+    padding: 60px 0 40px 0;
+}
+#members .container {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 20px;
+    max-width: 1200px;
+    width: 100%;
+    max-height: unset;
+    overflow-y: unset;
+    position: static;
+}
+#members .section-header {
+    position: static;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#members .close-members-section {
+    display: none !important;
+}
+#members .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+    margin-top: 0;
+}
+#members .member-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 18px 12px 14px 12px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.2s;
+    position: relative;
+}
+#members .member-card:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+}
+#members .member-image-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 12px auto;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+}
+#members .member-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+#members .member-name {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+    color: #2a2a2a;
+}
+#members .member-title {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+@media (max-width: 700px) {
+    #members .container {
+        padding: 0 5px;
+        max-width: 99vw;
+    }
+    #members .members-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    #members .member-card {
+        min-height: 120px;
+        padding: 12px 5px 10px 5px;
     }
 } 
