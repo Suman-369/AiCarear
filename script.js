@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initLoadingAnimations();
     setupWipRedirects();
+    initThemeToggle();
 });
 
 // Navigation functionality
@@ -38,10 +39,10 @@ function initNavigation() {
     // Navbar background on scroll
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.setProperty('background', 'var(--bg-navbar-scrolled)', 'important');
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.setProperty('background', 'var(--bg-primary-translucent)', 'important');
             navbar.style.boxShadow = 'none';
         }
     });
@@ -526,4 +527,35 @@ function setupWipRedirects() {
             window.location.href = 'wip.html';
         });
     });
+}
+
+// Theme Toggle
+function initThemeToggle() {
+    const themeToggleButton = document.querySelector('.theme-toggle-button');
+    const body = document.body;
+
+    // Function to apply theme
+    const applyTheme = (theme) => {
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+        }
+    };
+
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+
+    // Toggle theme on button click
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
 } 
