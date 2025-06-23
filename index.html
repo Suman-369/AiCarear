@@ -3,212 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Career Guidance</title>
+    <title>R&D Centre of Excellence for GNH Studies Research & Innovation</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">AI Career Guide</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">
+                    <img src="image/logo.png" alt="GNH Research Logo" class="logo-image">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
         <div class="hero-content">
-            <h1 class="animate-text">Discover Your Future in AI</h1>
-            <p class="animate-text">Explore exciting career opportunities in Artificial Intelligence</p>
-            <div class="button-container">
-                <button class="animated-button">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    
-                    Get Started
-                </button>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://web-camp.io/magazine/wp-content/uploads/2019/09/2195f3f61b37d3ea8f175988c003a588_s.jpg" alt="AI Technology">
-        </div>
-    </section>
-
-    <!-- AI Robot Section -->
-    <h2 class="essential-ai-skills" style="color: #3498db; font-size: 2rem; text-align: center;">Essential AI Skills</h2>
-    <section id="careers" class="ai-robot" role="region" aria-labelledby="aiRobotHeading" aria-live="polite">
-        
-        <h2 id="aiRobotHeading">Ask Our AI Career Robot</h2>
-        <p>Get personalized career guidance in AI by chatting with our AI robot.</p>
-        <div class="ai-chat-container">
-            <textarea id="userInput" placeholder="Type your career question here..." rows="4" aria-label="Type your career question here"></textarea>
-            <button id="askButton" aria-describedby="aiResponse">Ask AI Robot</button>
-            <div id="aiResponse" class="ai-response" role="alert" aria-live="assertive" aria-atomic="true"></div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2>Essential AI Skills</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fas fa-python"></i></div>
-                <h3>Python</h3>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 90%"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fas fa-database"></i></div>
-                <h3>Machine Learning</h3>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                <h3>Deep Learning</h3>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="resources">
-        <h2>Learning Resources</h2>
-        <div class="resource-cards">
-            <div class="resource-card">
-                <img src="https://sightsinplus.com/wp-content/uploads/2023/06/Generative-AI-free-short-courses-Check-details-and-apply.jpg" alt="Online Courses">
-                <h3>Online Courses</h3>
-                <p>Access top-rated AI courses from leading platforms</p>
-                <a href="https://www.coursera.org/courseraplus?utm_medium=sem&utm_source=bg&utm_campaign=b2c_india_x_coursera_ftcof_courseraplus_cx_dr_bau_bg_sem_bd-ex_in_all_m_x_21-06_x&campaignid=662967884&adgroupid=1247947035449093&device=c&keyword=coursera&matchtype=e&network=o&devicemodel=&adposition=&creativeid=77996820632393&adgroup=Brand%20Pure%20-%20Exact&querystring=coursera&targetid=kwd-77997062863182:loc-90&bidmatchtype=be&extensionid=&msclkid=333594e3c8ab1b548abafce42afe774f&utm_term=coursera&utm_content=Brand%20Pure%20-%20Exact" class="resource-link">Explore Courses</a>
-            </div>
-            <div class="resource-card">
-                <img src="https://i0.wp.com/apeejay.news/wp-content/uploads/2023/10/281023-10-most-read-books-Feature.jpg?fit=569%2C509&ssl=1" alt="Books">
-                <h3>Books</h3>
-                <p>Recommended reading materials for AI enthusiasts</p>
-                <a href="https://openlibrary.org/" class="resource-link">View Books</a>
-            </div>
-            <div class="resource-card">
-                <img src="https://www.stord.engineering/content/images/size/w2000/2021/07/community.jpeg" alt="Communities">
-                <h3>Communities</h3>
-                <p>Join AI communities and forums</p>
-                <a href="https://chat.whatsapp.com/BBj3Vtyd9NZAQLrw89ciYU" class="resource-link">Join Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founders Section -->
-    <section id="founders" class="founders">
-        <h2>Our Founder</h2>
-        <div class="founders-container">
-            <div class="founder-card">
-                <div class="founder-image">
-                    <img src="images/founder.jpg" alt="Founder">
-                </div>
-                <section id="founder">
-                    <h2>SK SAMIM</h2>
-                    
-                    <p>Founder & AI Expert</p>
-                    <p>Passionate about AI and technology...</p>
-                  </section>
-                  
-                    <a href="#" class="animated-social-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="animated-social-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-                <div class="button-container">
-                    <button class="animated-button contact-btn">
-                    
-                        <a href="https://wa.me/+919679421739?text=Hi%20Samim,%20I%20would%20like%20to%20discuss%20a%20project%20with%20you%20can%20we%20connect%20together%20.%20" target="_blank" style="text-decoration: none;">Contact Me</a>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Research & Development</span>
+                    <span class="title-line">Centre of Excellence</span>
+                    <span class="title-line highlight">for GNH Studies</span>
+                </h1>
+                <p class="hero-subtitle">Advancing Gross National Happiness through innovative research, sustainable development, and holistic well-being studies</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-3d">
+                        <span>Explore Research</span>
+                        <i class="fas fa-arrow-right"></i>
                     </button>
+                    <button class="btn btn-secondary btn-3d">
+                        <span>Learn More</span>
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="research-cube">
+                    <div class="cube-face front">
+                        <i class="fas fa-microscope"></i>
+                        <span>Research</span>
+                    </div>
+                    <div class="cube-face back">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Innovation</span>
+                    </div>
+                    <div class="cube-face right">
+                        <i class="fas fa-heart"></i>
+                        <span>Wellness</span>
+                    </div>
+                    <div class="cube-face left">
+                        <i class="fas fa-leaf"></i>
+                        <span>Sustainability</span>
+                    </div>
+                    <div class="cube-face top">
+                        <i class="fas fa-star"></i>
+                        <span>Excellence</span>
+                    </div>
+                    <div class="cube-face bottom">
+                        <i class="fas fa-globe"></i>
+                        <span>Global</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest News & Updates</h2>
+                <p class="section-subtitle">Stay informed about our latest research breakthroughs and initiatives</p>
+            </div>
+            <div class="news-grid">
+                <article class="news-card" data-aos="fade-up">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Research Lab">
+                        <div class="news-category">Research</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Breakthrough in Sustainable Development Metrics</h3>
+                        <p>Our research team has developed innovative metrics for measuring sustainable development that incorporate traditional GNH principles with modern data science approaches.</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Sarah Chen</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Team Collaboration">
+                        <div class="news-category">Collaboration</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>International Partnership with Bhutan Research Institute</h3>
+                        <p>We're excited to announce a new partnership with the Bhutan Research Institute to advance GNH studies and promote cross-cultural research methodologies.</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> March 12, 2024</span>
+                            <span><i class="fas fa-user"></i> Prof. Michael Rodriguez</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Wellness Study">
+                        <div class="news-category">Wellness</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Study on Mental Health and Community Well-being</h3>
+                        <p>Our latest research explores the correlation between community engagement, mental health outcomes, and overall happiness indices in urban environments.</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> March 10, 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Emily Watson</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Innovation Lab">
+                        <div class="news-category">Innovation</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>AI-Powered Happiness Assessment Tool Launch</h3>
+                        <p>We've developed a revolutionary AI tool that provides real-time happiness assessments using advanced machine learning algorithms and psychological frameworks.</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> March 8, 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Alex Kim</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Our Centre</h2>
+                    <p>The Research and Development Centre of Excellence for GNH Studies Research & Innovation is a pioneering institution dedicated to advancing the understanding and implementation of Gross National Happiness principles worldwide.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Research Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="research-pillars">
+                        <div class="pillar">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Equitable Development</h3>
+                            <p>Promoting balanced growth across all sectors</p>
+                        </div>
+                        <div class="pillar">
+                            <i class="fas fa-seedling"></i>
+                            <h3>Sustainable Development</h3>
+                            <p>Environmental conservation and resource management</p>
+                        </div>
+                        <div class="pillar">
+                            <i class="fas fa-users"></i>
+                            <h3>Cultural Preservation</h3>
+                            <p>Maintaining traditional values and heritage</p>
+                        </div>
+                        <div class="pillar">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Good Governance</h3>
+                            <p>Transparent and accountable leadership</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Research Areas</h2>
+                <p>Exploring diverse dimensions of happiness and well-being</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Psychological Well-being</h3>
+                    <p>Mental health, emotional balance, and cognitive development studies</p>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Physical Health</h3>
+                    <p>Healthcare access, nutrition, and lifestyle impact research</p>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Balance</h3>
+                    <p>Work-life balance and leisure time utilization studies</p>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Learning outcomes and educational system effectiveness</p>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Living Standards</h3>
+                    <p>Economic well-being and quality of life measurements</p>
+                </div>
+                <div class="research-card">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Vitality</h3>
+                    <p>Social cohesion and community engagement research</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="main-text scroll-bottom">
-            <h2 style="color: #3498db; font-weight: bold;">Contact Me -></h2>
-        </div>
-    
-        <form action="https://api.web3forms.com/submit" method="POST" class="scroll-bottom">
-            <input type="hidden" name="access_key" value="87738795-467c-4e48-9ab2-aaf78f4df09f">
-
-                <input type="text" name="first_name" placeholder="Your Name" required>
-                <input type="text" name="email-info" placeholder="Your Email" required>
-                <input type="number" name="Mobile-info" placeholder="Phone Number" autocomplete="off" required>
-                <input type="text"  name="Address-info" placeholder="Your Address" autocomplete="off" required>
-                <textarea name="Massege-info" id="" cols="30" rows="10" placeholder="your Message" autocomplete="off" required></textarea>
-                
-               
-              
-              
-            <div class="btn-box formBtn">
-                <button type="submit" value="Submit" class="btn">Send Message</button>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Join us in advancing happiness research and sustainable development</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Research Avenue, Innovation District<br>City, Country 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@gnhresearch.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
-
-        </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>AI Career Guide</h3>
-                <p>Your pathway to success in AI</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>GNH Research Centre</h3>
+                        <p>Advancing happiness through research and innovation</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <ul>
+                        <li><a href="#">Psychological Well-being</a></li>
+                        <li><a href="#">Physical Health</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Community Vitality</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Research Avenue</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@gnhresearch.org</p>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 AI Career Guide. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 R&D Centre of Excellence for GNH Studies. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
