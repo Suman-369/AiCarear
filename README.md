@@ -72,12 +72,7 @@ A modern, responsive 3D UI website showcasing research and development activitie
 - **Backdrop Filter**: Blur effects for glass morphism
 - **Box Shadows**: Multiple layers for depth perception
 
-## 📱 Responsive Design
 
-The website is fully responsive and optimized for:
-- **Desktop**: 1200px+ (full 3D effects)
-- **Tablet**: 768px - 1199px (adapted layout)
-- **Mobile**: 320px - 767px (mobile-first design)
 
 ### Mobile Features
 - Collapsible navigation menu
