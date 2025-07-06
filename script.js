@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initNavigation();
@@ -12,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupWipRedirects();
     initThemeToggle();
     initMembersSectionToggle();
+    initResearchFilters();
+    initInterdisciplinaryInteractions();
 });
 
 // Navigation functionality
@@ -593,5 +594,91 @@ function initMembersSectionToggle() {
         if (e.key === 'Escape' && membersSection.style.display === 'block') {
             closeMembersSection();
         }
+    });
+}
+
+// Research Area Filters
+function initResearchFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const researchCards = document.querySelectorAll('.research-area-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter research cards with improved animation
+            researchCards.forEach((card, index) => {
+                const category = card.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    // Show card with staggered animation
+                    setTimeout(() => {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(30px) scale(0.95)';
+                        
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0) scale(1)';
+                        }, 50);
+                    }, index * 100);
+                } else {
+                    // Hide card with smooth animation
+                    card.style.transition = 'all 0.3s ease';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px) scale(0.95)';
+                    
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // Improved hover effects for research cards
+    researchCards.forEach(card => {
+        let isHovered = false;
+        
+        card.addEventListener('mouseenter', function() {
+            isHovered = true;
+            if (this.style.display !== 'none') {
+                this.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            isHovered = false;
+            if (this.style.display !== 'none') {
+                this.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 8px 32px rgba(0,0,0,0.1)';
+            }
+        });
+    });
+}
+
+// Interdisciplinary Project Ideas Interactions
+function initInterdisciplinaryInteractions() {
+    // Simple hover effect for project items
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    projectItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
     });
 } 
